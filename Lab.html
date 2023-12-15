@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function getUserInput(promptText) {
+        return prompt(promptText);
+    }
+    var firstInput = getUserInput("Enter the 1st input:");
+    var secondInput = getUserInput("Enter the 2nd input:");
+
+    function compareAndDisplay(firstInput, secondInput) {
+        var resultText;
+        if (firstInput > secondInput) {
+            document.body.style.backgroundColor = "lightblue";
+            resultText = firstInput + " > " + secondInput;
+        } else if (secondInput > firstInput) {
+            document.body.style.backgroundColor = "orange";
+            resultText = secondInput + " > " + firstInput;
+        } else {
+            document.body.style.backgroundColor = "lightyellow";
+            resultText = secondInput + " == " + firstInput;
+        }
+
+        alert(resultText);
+    }
+
+    function showFirstInput() {
+        alert("1st Input: " + firstInput);
+    }
+
+    function showSecondInput() {
+        alert("2nd Input: " + secondInput);
+    }
+
+    function handleComparison() {
+        compareAndDisplay(firstInput, secondInput);
+    }
+    handleComparison();
+</script>
+
+<input type="button" value="Click for 1st input" onclick="showFirstInput()">
+<input type="button" value="Click for 2nd input" onclick="showSecondInput()">
+
+
+</body>
+</html>
